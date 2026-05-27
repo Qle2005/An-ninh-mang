@@ -1,0 +1,71 @@
+﻿<Window x:Class="AES_Demo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Đề tài An Ninh Mạng: Chuẩn mã hóa AES" Height="500" Width="700"
+        WindowStartupLocation="CenterScreen">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Text="CHƯƠNG TRÌNH MÃ HÓA &amp; GIẢI MÃ DỮ LIỆU BẰNG AES" 
+                   FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,0,0,20" Foreground="#2C3E50"/>
+
+        <GroupBox Grid.Row="1" Header="Dữ liệu đầu vào (Plaintext / Ciphertext)" Margin="0,0,0,10">
+            <Grid Margin="5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Button Grid.Row="0" x:Name="btnChonFileDauVao" Content="📁 Chọn file dữ liệu" 
+                        HorizontalAlignment="Right" Width="140" Height="27" Margin="0,0,0,5" 
+                        Background="#95A5A6" Foreground="White" Click="btnChonFileDauVao_Click"/>
+
+                <TextBox Grid.Row="1" x:Name="txtInput" TextWrapping="Wrap" AcceptsReturn="True" 
+                         VerticalScrollBarVisibility="Auto" FontSize="14"/>
+            </Grid>
+        </GroupBox>
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="0,5,0,15" HorizontalAlignment="Center">
+            <TextBlock Text="Khóa bí mật: " VerticalAlignment="Center" FontSize="14" FontWeight="SemiBold"/>
+            <TextBox x:Name="txtKey" Width="160" Height="27" Margin="5,0,10,0" FontSize="14" Padding="2"/>
+
+            <Button x:Name="btnChonKhoaTuFile" Content="📁 Mở file" Width="90" Height="27" 
+                    Margin="0,0,8,0" Background="#95A5A6" Foreground="White" Click="btnChonKhoaTuFile_Click"/>
+
+            <Button x:Name="btnSinhKhoaTuDong" Content="⚡ Tự động" Width="95" Height="27" 
+                    Margin="0,0,8,0" Background="#F39C12" Foreground="White" Click="btnSinhKhoaTuDong_Click"/>
+
+            <Button x:Name="btnLuuKhoaRaFile" Content="💾 Lưu khóa" Width="95" Height="27" 
+                    Background="#2980B9" Foreground="White" Click="btnLuuKhoaRaFile_Click"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,15">
+            <Button x:Name="btnEncrypt" Content="🔒 Mã hóa (Encrypt)" Width="150" Height="35" 
+                    Margin="0,0,20,0" FontSize="14" Background="#3498DB" Foreground="White" Click="btnEncrypt_Click"/>
+            <Button x:Name="btnDecrypt" Content="🔓 Giải mã (Decrypt)" Width="150" Height="35" 
+                    FontSize="14" Background="#2ECC71" Foreground="White" Click="btnDecrypt_Click"/>
+        </StackPanel>
+
+        <GroupBox Grid.Row="4" Header="Kết quả (Result)">
+            <Grid Margin="5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Button Grid.Row="0" x:Name="btnLuuFileKetQua" Content="💾 Lưu ra file" 
+                        HorizontalAlignment="Right" Width="120" Height="27" Margin="0,0,0,5" 
+                        Background="#8E44AD" Foreground="White" Click="btnLuuFileKetQua_Click"/>
+
+                <TextBox Grid.Row="1" x:Name="txtOutput" TextWrapping="Wrap" AcceptsReturn="True" 
+                         VerticalScrollBarVisibility="Auto" FontSize="14" IsReadOnly="True" Background="#F8F9F9"/>
+            </Grid>
+        </GroupBox>
+    </Grid>
+</Window>
