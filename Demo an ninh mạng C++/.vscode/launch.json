@@ -1,0 +1,31 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug AES GUI (gdb)",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "D:/Demo_CPP/aes_gui.exe",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "D:/Demo_CPP",
+            "environment": [
+                {
+                    "name": "PATH",
+                    "value": "C:\\msys64\\ucrt64\\bin;${env:PATH}"
+                }
+            ],
+            "externalConsole": true,
+            "MIMode": "gdb",
+            "miDebuggerPath": "C:/msys64/ucrt64/bin/gdb.exe",
+            "preLaunchTask": "${defaultBuildTask}",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        }
+    ]
+}
